@@ -26,11 +26,34 @@ const NFTCard = ({data}) => {
           height: "100%",
           borderTopLeftRadius: SIZES.font,
           borderTopRightRadius: SIZES.font
+
         }}
         />
         <CircleButton imgUrl={assets.heart} right={10} top={10} />
       </View>
       <SubInfo />
+
+      <View style={{ width: "100%", padding: SIZES.font }}>
+        <NFTTitle 
+        title={data.name}
+        subTitle={data.creator}
+        titleSIze={SIZES.large}
+        subTitleSize={SIZES.small}
+        />
+        <View style={{
+          marginTop: SIZES.font,
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center"
+        }}>
+          <EthPrice price={data.price} />
+          <RectButton 
+          minWidth={120}
+          fontSizing={SIZES.font}
+          handlePress={() => navigation.navigate("Details", {data}) }
+          />
+        </View>
+      </View>
     </View>
   )
 }
