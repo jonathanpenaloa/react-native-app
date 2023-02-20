@@ -7,7 +7,9 @@ import DetailsDesc from "../components/DetailsDesc";
 
 import DetailsBid from "../components/DetailsBid";
 
+import { SubInfo } from "./SubInfo";
+
 export {
     HomeHeader, FocusedStatusBar, NFTCard,
-    CircleButton, RectButton, DetailsBid, DetailsDesc
+    CircleButton, RectButton, DetailsBid, DetailsDesc, SubInfo
 }

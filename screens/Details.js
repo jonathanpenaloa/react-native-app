@@ -7,11 +7,25 @@ import { CircleButton, RectButton, SubInfo, FocusedStatusBar, DetailsDesc, Detai
 
 
 const DetailsHeader = ({data, navigation}) => (
-  <View styles={{ width: "100%", height: 373 }}>
+  <View style={{ width: "100%", height: 373 }}>
+    
     <Image 
     source={data.image}
     resizeMode="cover"
     style={{ width: "100%", height: "100%"}}
+    />
+
+    <CircleButton
+    imgUrl={assets.left}
+    handlePress={() => navigation.goBack()}
+    left={15}
+    top={StatusBar.currentHeight + 10}
+    />
+
+    <CircleButton
+    imgUrl={assets.heart}
+    right={15}
+    top={StatusBar.currentHeight + 10}
     />
   </View>
 )
@@ -39,7 +53,7 @@ function Details({ route, navigation  }) {
         zIndex: 1,
       }}
       >
-        <RectButton minWidth={170} fontSize={SIZES.large} {...SHADOWS.dark}/>
+      <RectButton minWidth={170} fontSize={SIZES.large} {...SHADOWS.dark}/>
       </View>
       <FlatList 
       data={data.bids}
@@ -50,6 +64,7 @@ function Details({ route, navigation  }) {
       ListHeaderComponent={() => (
         <React.Fragment>
           <DetailsHeader data={data} navigation={navigation}/>
+          <SubInfo />
         </React.Fragment>
       )}
       />
