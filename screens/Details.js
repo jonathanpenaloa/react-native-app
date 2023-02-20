@@ -64,7 +64,13 @@ function Details({ route, navigation  }) {
       ListHeaderComponent={() => (
         <React.Fragment>
           <DetailsHeader data={data} navigation={navigation}/>
+          
           <SubInfo />
+
+          <View style={{padding: SIZES.font}} >
+            <DetailsDesc data={data} />
+          </View>
+        
         </React.Fragment>
       )}
       />
